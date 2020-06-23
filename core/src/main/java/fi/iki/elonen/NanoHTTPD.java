@@ -1643,8 +1643,9 @@ public abstract class NanoHTTPD {
                 } catch (NumberFormatException ex) {
                     LOG.severe("content-length was no number " + contentLengthString);
                 }
+            } else {
+                pw.print("Content-Length: " + size + "\r\n");
             }
-            pw.print("Content-Length: " + size + "\r\n");
             return size;
         }
 
